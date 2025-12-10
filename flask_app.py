@@ -3,7 +3,6 @@ import random
 
 app = Flask(__name__)
 
-# --- YAPAY ZEKA GİBİ DAVRANAN MİNİ ÖNERİ SİSTEMİ ---
 oneriler = [
     {"konu": "Hava", "mesaj": "Bugün hava biraz kapalı, yanına şemsiye almayı unutma! ☔"},
     {"konu": "Mod", "mesaj": "Enerjin düşükse bir kahve molası ver ve derin nefes al. ☕"},
@@ -14,23 +13,14 @@ oneriler = [
 
 @app.route('/')
 def ana_sayfa():
-    # Rastgele bir öneri seçelim
     gunun_onerisi = random.choice(oneriler)
-    
-    # Sayfayı açarken öneriyi de gönderelim
     return render_template('index.html', oneri=gunun_onerisi)
 
-# İleride Ajanda 1, 2 ve 3 için buraya yeni yollar (route) ekleyeceğiz.
-
-# ... (yukarıdaki kodlar aynı kalsın)
-
-# YENİ EKLENECEK KISIM:
 @app.route('/ajanda/<tur>')
 def ajanda_goster(tur):
     # Kullanıcının seçtiği türü (minimalist, renkli vs.) alıp ajanda.html'e gönderiyoruz
     return render_template('ajanda.html', tur=tur)
 
-# ... (if __name__ == '__main__': kısmı aşağıda kalsın)
-
 if __name__ == '__main__':
+
     app.run(debug=True)
