@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajandam - {{ tur }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="{{ tur }}">
+
+    <div class="ekran-duzeni">
+        <div class="defter-kabugu">
+            
+            <div class="buton-alani">
+                <button onclick="notlariKaydet()" class="btn-islem kaydet">💾 Kaydet</button>
+                <a href="/" class="btn-islem cikis">✖ Çıkış</a>
+            </div>
+
+            <div class="defter-ici">
+                
+                <div class="haftalik-gorunum">
+                    <div class="sayfa sol-sayfa">
+                        <div class="tarih-basligi">HAFTALIK PLAN</div>
+                        <div class="yazi-kutusu"><span class="gun-etiket">Pazartesi</span><textarea id="h-gun-1"></textarea></div>
+                        <div class="yazi-kutusu"><span class="gun-etiket">Salı</span><textarea id="h-gun-2"></textarea></div>
+                        <div class="yazi-kutusu"><span class="gun-etiket">Çarşamba</span><textarea id="h-gun-3"></textarea></div>
+                    </div>
+                    <div class="spiral-alani">
+                        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+                    </div>
+                    <div class="sayfa sag-sayfa">
+                        <div class="tarih-basligi">NOTLAR</div>
+                        <div class="yazi-kutusu"><span class="gun-etiket">Perşembe</span><textarea id="h-gun-4"></textarea></div>
+                        <div class="yazi-kutusu"><span class="gun-etiket">Cuma</span><textarea id="h-gun-5"></textarea></div>
+                        <div class="alt-yan-yana">
+                            <div class="yazi-kutusu kucuk"><span class="gun-etiket">Hafta Sonu</span><textarea id="h-gun-6"></textarea></div>
+                            <div class="yazi-kutusu kucuk not-kutu"><span class="gun-etiket">Not</span><textarea id="h-gun-7"></textarea></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="aylik-gorunum">
+                    <div class="sayfa grid-sayfa">
+                         <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">1</span><textarea id="a-kutu-1"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">2</span><textarea id="a-kutu-2"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">3</span><textarea id="a-kutu-3"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">4</span><textarea id="a-kutu-4"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">5</span><textarea id="a-kutu-5"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">6</span><textarea id="a-kutu-6"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">7</span><textarea id="a-kutu-7"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">8</span><textarea id="a-kutu-8"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">9</span><textarea id="a-kutu-9"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">10</span><textarea id="a-kutu-10"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">11</span><textarea id="a-kutu-11"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">12</span><textarea id="a-kutu-12"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">13</span><textarea id="a-kutu-13"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">14</span><textarea id="a-kutu-14"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">15</span><textarea id="a-kutu-15"></textarea></div>
+                    </div>
+                    
+                    <div class="sayfa grid-sayfa">
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">16</span><textarea id="a-kutu-16"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">17</span><textarea id="a-kutu-17"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">18</span><textarea id="a-kutu-18"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">19</span><textarea id="a-kutu-19"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">20</span><textarea id="a-kutu-20"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">21</span><textarea id="a-kutu-21"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">22</span><textarea id="a-kutu-22"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">23</span><textarea id="a-kutu-23"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">24</span><textarea id="a-kutu-24"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">25</span><textarea id="a-kutu-25"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">26</span><textarea id="a-kutu-26"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">27</span><textarea id="a-kutu-27"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">28</span><textarea id="a-kutu-28"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">29</span><textarea id="a-kutu-29"></textarea></div>
+                        <div class="yazi-kutusu prof-kutu"><span class="gun-etiket">30</span><textarea id="a-kutu-30"></textarea></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="yan-panel">
+            <h3>📌 Pano</h3>
+            <textarea id="ekstra-not" placeholder="Ekstra notlar..."></textarea>
+        </div>
+    </div>
+
+    <script>
+        const aktifTema = document.body.className;
+        window.onload = function() {
+            // Haftalık Verileri Çek
+            for (let i = 1; i <= 7; i++) {
+                let not = localStorage.getItem(aktifTema + '-h-gun-' + i);
+                if (not) document.getElementById('h-gun-' + i).value = not;
+            }
+            // Aylık Verileri Çek
+            for (let i = 1; i <= 30; i++) {
+                let not = localStorage.getItem(aktifTema + '-a-kutu-' + i);
+                if (not) document.getElementById('a-kutu-' + i).value = not;
+            }
+            // Pano
+            let ekstra = localStorage.getItem(aktifTema + '-ekstra-not');
+            if (ekstra) document.getElementById('ekstra-not').value = ekstra;
+        };
+
+        function notlariKaydet() {
+            // Haftalığı Kaydet
+            for (let i = 1; i <= 7; i++) {
+                let val = document.getElementById('h-gun-' + i).value;
+                localStorage.setItem(aktifTema + '-h-gun-' + i, val);
+            }
+            // Aylığı Kaydet
+            for (let i = 1; i <= 30; i++) {
+                let val = document.getElementById('a-kutu-' + i).value;
+                localStorage.setItem(aktifTema + '-a-kutu-' + i, val);
+            }
+            localStorage.setItem(aktifTema + '-ekstra-not', document.getElementById('ekstra-not').value);
+            alert("✅ Kaydedildi!");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+/* =========================================
+   1. GENEL AYARLAR
+   ========================================= */
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif; margin: 0; padding: 0; height: 100vh;
+    display: flex; justify-content: center; align-items: center; background-color: #fce4ec;
+}
+a { text-decoration: none; }
+
+/* =========================================
+   2. GİZLE - GÖSTER MANTIĞI (SİHİR BURADA)
+   ========================================= */
+/* Önce ikisini de gizle */
+.haftalik-gorunum, .aylik-gorunum {
+    display: none;
+    width: 100%; height: 100%; /* Tam kapla */
+}
+
+/* Minimalist veya Renkli ise HAFTALIK göster */
+body.minimalist .haftalik-gorunum,
+body.renkli .haftalik-gorunum {
+    display: flex;
+}
+
+/* Profesyonel ise AYLIK göster */
+body.profesyonel .aylik-gorunum {
+    display: flex;
+}
+
+
+/* =========================================
+   3. DEFTER İSKELETİ
+   ========================================= */
+.ekran-duzeni { display: flex; gap: 40px; align-items: center; justify-content: center; }
+
+.defter-kabugu {
+    width: 950px; height: 650px;
+    border-radius: 15px; padding: 20px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    position: relative; display: flex; flex-direction: column;
+}
+.buton-alani { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.btn-islem { border: none; padding: 5px 15px; border-radius: 5px; cursor: pointer; font-weight: bold; color: white; font-size: 13px; }
+.kaydet { background: #00b894; } .cikis { background: #d63031; }
+.defter-ici { display: flex; height: 100%; position: relative;}
+
+/* Sayfa Genel */
+.sayfa { flex: 1; padding: 20px; display: flex; flex-direction: column; gap: 10px; position: relative; }
+
+/* Kutu Genel */
+.yazi-kutusu { flex-grow: 1; background: white; border-radius: 5px; position: relative; display: flex; flex-direction: column; padding: 0; }
+.gun-etiket { position: absolute; top: 5px; right: 5px; font-size: 10px; font-weight: bold; color: #999; text-transform: uppercase; pointer-events: none; }
+textarea { width: 100%; height: 100%; border: none; resize: none; outline: none; background: transparent; padding: 25px 10px 5px 10px; box-sizing: border-box; }
+
+
+/* =========================================
+   4. HAFTALIK GÖRÜNÜM (Minimalist & Renkli)
+   ========================================= */
+.haftalik-gorunum .sol-sayfa { border-radius: 5px 0 0 5px; border-right: 1px solid #ccc; padding-right: 35px; }
+.haftalik-gorunum .sag-sayfa { border-radius: 0 5px 5px 0; padding-left: 35px; }
+.alt-yan-yana { display: flex; gap: 10px; flex-grow: 1; }
+.kucuk { flex: 1; }
+.spiral-alani { width: 40px; display: flex; flex-direction: column; justify-content: space-around; align-items: center; margin: 20px 0; z-index: 10; }
+.spiral-alani i { width: 45px; height: 10px; background: linear-gradient(#bdc3c7, #7f8c8d); border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+
+
+/* =========================================
+   5. AYLIK GÖRÜNÜM (Profesyonel)
+   ========================================= */
+.aylik-gorunum .grid-sayfa {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 Sütun */
+    grid-template-rows: repeat(5, 1fr); /* 5 Satır */
+    gap: 0; padding: 20px;
+    background-color: #fdfbf7;
+}
+
+/* =========================================
+   6. TEMA ÖZELLEŞTİRMELERİ
+   ========================================= */
+
+/* --- A) PROFESYONEL TEMA --- */
+body.profesyonel { background-color: #dcdde1; }
+body.profesyonel .defter-kabugu { background-color: #2f3640; }
+
+body.profesyonel .yazi-kutusu {
+    border: 1px solid #bbb; border-radius: 0; margin-right: -1px; margin-bottom: -1px; background-color: #fff;
+}
+body.profesyonel textarea {
+    font-family: 'Segoe UI', sans-serif; font-size: 13px; color: #333;
+    background-image: none !important;
+}
+body.profesyonel .gun-etiket { left: 5px; top: 5px; font-size: 11px; font-weight: 600; color: #444; }
+
+
+/* --- B) MİNİMALİST TEMA --- */
+body.minimalist { background-color: #f1f2f6; }
+body.minimalist .defter-kabugu { background-color: #116937; background-image: linear-gradient(to bottom right, rgba(255,255,255,0.05), rgba(0,0,0,0.1));}
+body.minimalist .sayfa { background-color: #fff; }
+body.minimalist .yazi-kutusu { border: 1px solid #eee; border-left: 4px solid #116937; margin-bottom: 10px; }
+
+
+/* --- C) RENKLİ TEMA --- */
+body.renkli { background-color: #ffeaa7; }
+body.renkli .defter-kabugu { background-color: #ff9ff3; background-image: radial-gradient(#fff 20%, transparent 20%), radial-gradient(#fff 20%, transparent 20%); background-size: 20px 20px; background-position: 0 0, 10px 10px; }
+body.renkli .sayfa { background-color: #fff0f6; }
+body.renkli .yazi-kutusu { border: 2px dashed #ff9ff3; border-radius: 15px; margin-bottom: 10px; background: #fff0f6; }
+body.renkli .yazi-kutusu::after { content: '🌸'; position: absolute; bottom: 5px; right: 5px; font-size: 16px; opacity: 0.6; pointer-events: none; }
+
+
+/* --- YAN PANEL --- */
+.yan-panel { width: 200px; height: 500px; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); border-top: 10px solid #7f8c8d; display: flex; flex-direction: column; }
+.yan-panel h3 { margin-top: 0; color: #555; text-align: center; }
+.yan-panel textarea { font-size: 13px; padding: 0; background-image: none; }
+
+/* --- ANA SAYFA KARTLARI --- */
+.container { text-align: center; width: 90%; max-width: 1000px; }
+h1 { color: #880e4f; margin-bottom: 20px; }
+.oneri-kutusu { background: #fff; padding: 10px 20px; border-radius: 50px; border-left: 5px solid #e91e63; margin-bottom: 30px; display: inline-block; }
+.secim-alani { display: flex; justify-content: center; gap: 30px; }
+.kart { background: white; padding: 30px; border-radius: 15px; width: 200px; display: flex; flex-direction: column; align-items: center; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; }
+.kart:hover { transform: translateY(-5px); }
+.kart-1 { border-top: 5px solid #116937; } .kart-2 { border-top: 5px solid #e84393; } .kart-3 { border-top: 5px solid #2c3e50; }
+.btn { background: #880e4f; color: white; padding: 8px 25px; border-radius: 20px; font-weight: bold; margin-top: 10px; }

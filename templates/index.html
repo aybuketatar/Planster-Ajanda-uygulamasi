@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benim Dijital Ajandam</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>📅 Günlük Planlayıcı</h1>
+            <div class="oneri-kutusu">
+                <strong>💡 {{ oneri.konu }}:</strong> {{ oneri.mesaj }}
+            </div>
+        </header>
+
+        <div class="secim-alani">
+            
+            <div class="kart kart-1">
+                <h2>Minimalist</h2>
+                <p>Sade ve odaklı.</p>
+                <a href="/ajanda/minimalist" class="btn">Seç</a>
+            </div>
+
+            <div class="kart kart-2">
+                <h2>Renkli & Enerjik</h2>
+                <p>Yaratıcı ruhlar için.</p>
+                <a href="/ajanda/renkli" class="btn">Seç</a>
+            </div>
+
+            <div class="kart kart-3">
+                <h2>Profesyonel</h2>
+                <p>İş ve okul takibi.</p>
+                <a href="/ajanda/profesyonel" class="btn">Seç</a>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
