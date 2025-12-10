@@ -88,28 +88,23 @@
     <script>
         const aktifTema = document.body.className;
         window.onload = function() {
-            // Haftalık Verileri Çek
             for (let i = 1; i <= 7; i++) {
                 let not = localStorage.getItem(aktifTema + '-h-gun-' + i);
                 if (not) document.getElementById('h-gun-' + i).value = not;
             }
-            // Aylık Verileri Çek
             for (let i = 1; i <= 30; i++) {
                 let not = localStorage.getItem(aktifTema + '-a-kutu-' + i);
                 if (not) document.getElementById('a-kutu-' + i).value = not;
             }
-            // Pano
             let ekstra = localStorage.getItem(aktifTema + '-ekstra-not');
             if (ekstra) document.getElementById('ekstra-not').value = ekstra;
         };
 
         function notlariKaydet() {
-            // Haftalığı Kaydet
             for (let i = 1; i <= 7; i++) {
                 let val = document.getElementById('h-gun-' + i).value;
                 localStorage.setItem(aktifTema + '-h-gun-' + i, val);
             }
-            // Aylığı Kaydet
             for (let i = 1; i <= 30; i++) {
                 let val = document.getElementById('a-kutu-' + i).value;
                 localStorage.setItem(aktifTema + '-a-kutu-' + i, val);
@@ -119,4 +114,5 @@
         }
     </script>
 </body>
+
 </html>
