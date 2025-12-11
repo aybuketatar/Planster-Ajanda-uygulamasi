@@ -1,1 +1,1 @@
-Web sitesi --> planster.pythonaywhere.com
+Web sitesi --> https://planster.pythonanywhere.com
