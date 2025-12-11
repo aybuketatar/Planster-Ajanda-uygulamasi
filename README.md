@@ -1,1 +1,1 @@
-# Planster-Ajanda-uygulamasi
+Web sitesi --> planster.pythonaywhere.com
